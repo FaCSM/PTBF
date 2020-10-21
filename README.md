@@ -24,3 +24,6 @@ Sclass13. § 16,страница 107, упражнение 3.4
 Sclass1. § 8,страница 50, упражнение 2.а
 Sclass2. § 8,страница 50, упражнение 2.б
 ```
+```
+Файл проверен на <a href="https://www.virustotal.com/gui/file/f82cf1bb79f52463bd8c4fa144b01afe49554a75a27a412e5d5c8eb345ccddd5/detection">VirusTotal</a>
+```
