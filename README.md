@@ -25,5 +25,5 @@ sclass1. § 8,страница 50, упражнение 2.а
 sclass2. § 8,страница 50, упражнение 2.б
 ```
 
-Файл проверен на [VirusTotal](https://www.virustotal.com/gui/file/1022075362c2764d3ce82b9eee7967cf4e301fc601542f3245d76353a917c64c/detection)
+Файл проверен на [VirusTotal](https://www.virustotal.com/gui/file/a240b714d87c724c48fe57164b4d8690a4911244ccc83f1178e1b89b9627b883/detection)
 
