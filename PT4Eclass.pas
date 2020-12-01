@@ -177,8 +177,8 @@ end;
 
 procedure Par17Ex10;
 var
-  x, n, m,k: integer;
-  s:string;
+  x, n, m, k: integer;
+  s: string;
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
   TaskText('§ 17,страница 88, упражнение 10'); 
@@ -189,179 +189,227 @@ begin
   DataN('m = ', m, xCenter, 3, 6);
   DataN('x = ', x, xCenter, 3, 6);
   for var i := n to m do
-    if (n mod 2 = 0) and(n mod x <> 0 ) then
-      begin
-        ResultN('', i, xCenter, 2, 4);
-      k:=1
-      end;
-      if k<>1 then
-        s:='Таких чисел нет';
-        ResultS('',s,xCenter,2);
+    if (n mod 2 = 0) and (n mod x <> 0) then
+    begin
+      ResultN('', i, xCenter, 2, 4);
+      k := 1
+    end;
+  if k <> 1 then
+    s := 'Таких чисел нет';
+  ResultS('', s, xCenter, 2);
   SetTestCount(3);
 end;
 
 procedure Par19Ex13;
 var
-n: integer;
-s: string;
-i, ch, neCh: integer;
+  n: integer;
+  s: string;
+  i, ch, neCh: integer;
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
   TaskText('§ 19,страница 108, упражнение 13');
-  n:= RandomN(100,999999999);
-DataN('n = ',n,xCenter,2,9);
-s:= intToStr(n);
-i:=1;
-while (i <= length(s)) do
-begin
-if(strToInt(s[i]) mod 2 = 1) then neCh := neCh + 1
-else ch := ch + 1;
-i:=i+1;
-end;
-var s1:='Чётных чисел больше';
-var s2:='Нечётных чисел больше';
-var s3:='Чётных и нечётных чисел поровну';
-if(ch > neCh) then ResultS('',s1,xCenter,2);
-if(ch < neCh) then ResultS('',s2,xCenter,2);
-if(ch = neCh) then ResultS('',s3,xCenter,2);
- SetTestCount(3);
-end;
-
-procedure Par19Ex14; 
-var 
-n,i:integer; 
-s:string; 
-b:array[1..9] of integer;
-begin 
-CreateTask('Основные Алгоритмические конструкции'); 
-TaskText('§ 19,страница 108, упражнение 14'); 
-i := 1; 
-n:= Randomn(0,999999999); 
-DataN('n=',n,xCenter,3,6); 
-var a:=0; 
-s:= inttostr(n); 
-while strtoint(s[i]) mod 3 = 0 do 
-begin 
-a:=a+1; 
-b[a] := i; 
-i:=i+1;
-SetTestCount(3);  
-end; 
-case a of 
-1: ResultN('',b[1],xCenter,1,1); 
-2: begin 
-ResultN('',b[1],xleft,1,1); 
-ResultN('',b[2],xright,1,1); 
-end; 
-3: begin 
-ResultN('',b[1],xleft,1,1); 
-ResultN('',b[2],xCenter,1,1); 
-ResultN('',b[3],xright,1,1); 
-end; 
-4: begin 
-ResultN('',b[1],xleft,1,1); 
-ResultN('',b[2],xCenter,1,1); 
-ResultN('',b[3],xright,1,1); 
-ResultN('',b[4],xcenter,2,1); 
-end; 
-5: begin 
-ResultN('',b[1],xleft,1,1); 
-ResultN('',b[2],xCenter,1,1); 
-ResultN('',b[3],xright,1,1); 
-ResultN('',b[4],xleft,2,1); 
-ResultN('',b[5],xCenter,2,1); 
-end; 
-6: begin 
-ResultN('',b[1],xleft,1,1); 
-ResultN('',b[2],xCenter,1,1); 
-ResultN('',b[3],xright,1,1); 
-ResultN('',b[4],xleft,2,1); 
-ResultN('',b[5],xCenter,2,1); 
-ResultN('',b[6],xright,2,1); 
-end; 
-7: begin 
-ResultN('',b[1],xleft,1,1); 
-ResultN('',b[2],xCenter,1,1); 
-ResultN('',b[3],xright,1,1); 
-ResultN('',b[4],xleft,2,1); 
-ResultN('',b[5],xCenter,2,1); 
-ResultN('',b[6],xright,2,1); 
-ResultN('',b[7],xCenter,3,1); 
-end; 
-8: begin 
-ResultN('',b[1],xleft,1,1); 
-ResultN('',b[2],xCenter,1,1); 
-ResultN('',b[3],xright,1,1); 
-ResultN('',b[4],xleft,2,1); 
-ResultN('',b[5],xCenter,2,1); 
-ResultN('',b[6],xright,2,1); 
-ResultN('',b[7],xleft,3,1); 
-ResultN('',b[8],xCenter,3,1); 
-end; 
-9: begin 
-ResultN('',b[1],xleft,1,1); 
-ResultN('',b[2],xCenter,1,1); 
-ResultN('',b[3],xright,1,1); 
-ResultN('',b[4],xleft,2,1); 
-ResultN('',b[5],xCenter,2,1); 
-ResultN('',b[6],xright,2,1); 
-ResultN('',b[7],xleft,3,1); 
-ResultN('',b[8],xCenter,3,1); 
-ResultN('',b[9],xright,3,1); 
-end; 
-end;
+  n := RandomN(100, 999999999);
+  DataN('n = ', n, xCenter, 2, 9);
+  s := intToStr(n);
+  i := 1;
+  while (i <= length(s)) do
+  begin
+    if(strToInt(s[i]) mod 2 = 1) then neCh := neCh + 1
+    else ch := ch + 1;
+    i := i + 1;
+  end;
+  var s1 := 'Чётных чисел больше';
+  var s2 := 'Нечётных чисел больше';
+  var s3 := 'Чётных и нечётных чисел поровну';
+  if(ch > neCh) then ResultS('', s1, xCenter, 2);
+  if(ch < neCh) then ResultS('', s2, xCenter, 2);
+  if(ch = neCh) then ResultS('', s3, xCenter, 2);
+  SetTestCount(3);
 end;
 
-procedure par19ex16; 
-var 
-x,a: integer; 
-i, err: integer; 
-s, z,r: string; 
-begin 
-CreateTask('Основные Алгоритмические конструкции'); 
-TaskText('§ 19,страница 108, упражнение 14'); 
-x:=RandomN(0,999999); 
-DataN('',x,xCenter,2,6);
-s:=inttostr(x); 
-z := '';
-r:='Число не подходит'; 
-for i := length(s) downto 1 do 
-z := z + s[i]; 
-val(z, a, err); 
-if a = x then
-ResultN('',a,xcenter,3,6)
-else 
-  ResultS('',r,xcenter,3);
-SetTestCount(3); 
-end;
-
-procedure Par19Ex15; 
+procedure Par19Ex14;
 var
-x, a, k, t, i, d: integer;
+  n, i: integer; 
+  s: string; 
+  b: array[1..9] of integer;
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
-TaskText('§ 19,страница 108, упражнение 15'); 
-x:= RandomN(100,9999999);
-DataN('x = ',x,xCenter,2,7);
-a:= x;
-k:= 0;
-while a > 0 do
-begin
-k:=1;
-a:= a div 10;
+  TaskText('§ 19,страница 108, упражнение 14'); 
+  i := 1; 
+  n := Randomn(0, 999999999); 
+  DataN('n=', n, xCenter, 3, 6); 
+  var a := 0; 
+  s := inttostr(n); 
+  while strtoint(s[i]) mod 3 = 0 do 
+  begin
+    a := a + 1; 
+    b[a] := i; 
+    i := i + 1;
+    SetTestCount(3);  
+  end; 
+  case a of 
+    1: ResultN('', b[1], xCenter, 1, 1); 
+    2:
+      begin
+        ResultN('', b[1], xleft, 1, 1); 
+        ResultN('', b[2], xright, 1, 1); 
+      end; 
+    3:
+      begin
+        ResultN('', b[1], xleft, 1, 1); 
+        ResultN('', b[2], xCenter, 1, 1); 
+        ResultN('', b[3], xright, 1, 1); 
+      end; 
+    4:
+      begin
+        ResultN('', b[1], xleft, 1, 1); 
+        ResultN('', b[2], xCenter, 1, 1); 
+        ResultN('', b[3], xright, 1, 1); 
+        ResultN('', b[4], xcenter, 2, 1); 
+      end; 
+    5:
+      begin
+        ResultN('', b[1], xleft, 1, 1); 
+        ResultN('', b[2], xCenter, 1, 1); 
+        ResultN('', b[3], xright, 1, 1); 
+        ResultN('', b[4], xleft, 2, 1); 
+        ResultN('', b[5], xCenter, 2, 1); 
+      end; 
+    6:
+      begin
+        ResultN('', b[1], xleft, 1, 1); 
+        ResultN('', b[2], xCenter, 1, 1); 
+        ResultN('', b[3], xright, 1, 1); 
+        ResultN('', b[4], xleft, 2, 1); 
+        ResultN('', b[5], xCenter, 2, 1); 
+        ResultN('', b[6], xright, 2, 1); 
+      end; 
+    7:
+      begin
+        ResultN('', b[1], xleft, 1, 1); 
+        ResultN('', b[2], xCenter, 1, 1); 
+        ResultN('', b[3], xright, 1, 1); 
+        ResultN('', b[4], xleft, 2, 1); 
+        ResultN('', b[5], xCenter, 2, 1); 
+        ResultN('', b[6], xright, 2, 1); 
+        ResultN('', b[7], xCenter, 3, 1); 
+      end; 
+    8:
+      begin
+        ResultN('', b[1], xleft, 1, 1); 
+        ResultN('', b[2], xCenter, 1, 1); 
+        ResultN('', b[3], xright, 1, 1); 
+        ResultN('', b[4], xleft, 2, 1); 
+        ResultN('', b[5], xCenter, 2, 1); 
+        ResultN('', b[6], xright, 2, 1); 
+        ResultN('', b[7], xleft, 3, 1); 
+        ResultN('', b[8], xCenter, 3, 1); 
+      end; 
+    9:
+      begin
+        ResultN('', b[1], xleft, 1, 1); 
+        ResultN('', b[2], xCenter, 1, 1); 
+        ResultN('', b[3], xright, 1, 1); 
+        ResultN('', b[4], xleft, 2, 1); 
+        ResultN('', b[5], xCenter, 2, 1); 
+        ResultN('', b[6], xright, 2, 1); 
+        ResultN('', b[7], xleft, 3, 1); 
+        ResultN('', b[8], xCenter, 3, 1); 
+        ResultN('', b[9], xright, 3, 1); 
+      end; 
+  end;
 end;
-var s1:='В числе четное количество цифр';
-if k mod 2 = 0 then
-ResultS('',s1,xCenter,2)
-else
+
+procedure Par19Ex15;
+var
+  x, a, k, t,  d: integer;
 begin
-t:= 1;
-for i:=1 to k div 2 do
-t *= 10;
-d:= x div t mod 10;
-ResultN('',d,xCenter,2,1);
+  CreateTask('Основные Алгоритмические конструкции'); 
+  TaskText('§ 19,страница 108, упражнение 15'); 
+  x := RandomN(100, 9999999);
+  DataN('x = ', x, xCenter, 2, 7);
+  a := x;
+  k := 0;
+  while a > 0 do
+  begin
+    k := 1;
+    a := a div 10;
+  end;
+  var s1 := 'В числе четное количество цифр';
+  if k mod 2 = 0 then
+    ResultS('', s1, xCenter, 2)
+  else
+  begin
+    t := 1;
+    for var i := 1 to k div 2 do
+      t *= 10;
+    d := x div t mod 10;
+    ResultN('', d, xCenter, 2, 1);
+  end;
+  SetTestCount(3); 
 end;
-SetTestCount(3); 
+
+procedure Par19Ex16;
+var
+  x, a, err: integer; 
+  s, z, r: string;
+begin
+  CreateTask('Основные Алгоритмические конструкции'); 
+  TaskText('§ 19,страница 108, упражнение 14'); 
+  x := RandomN(0, 999999); 
+  DataN('', x, xCenter, 2, 6);
+  s := inttostr(x); 
+  z := '';
+  r := 'Число не подходит'; 
+  for var i := length(s) downto 1 do 
+    z := z + s[i]; 
+  val(z, a, err); 
+  if a = x then
+    ResultN('', a, xcenter, 3, 6)
+  else 
+    ResultS('', r, xcenter, 3);
+  SetTestCount(3); 
+end;
+
+procedure Par19Ex18;
+var
+  x, c: real;
+begin
+  CreateTask('Основные Алгоритмические конструкции'); 
+  TaskText('§ 19,страница 108, упражнение 18', 0, 2); 
+  TaskText('За год окончание подсчёта возьмите 2018', 0, 4);
+  x := RandomN(1, 99);
+  c := 20;
+  DataR('x =  ', x, xCenter, 3, 2);
+  for var i := 1626 to 2018 do
+    c := c + c * (x / 100);
+  ResultR('', c, xCenter, 3, 6);
+  SetTestCount(3); 
+end;
+
+procedure Par19Ex19;
+var
+  c1, c2, n: real;
+  k: integer;
+begin
+  CreateTask('Основные Алгоритмические конструкции'); 
+  TaskText('§ 19,страница 108, упражнение 19'); 
+  c1 := RandomN(0, 99);
+  c2 := RandomN(0, 99);
+  k := RandomN(0, 20);
+  DataR('c1 =  ', c1, xLeft, 2, 2);
+  DataR('c2 =  ', c2, xRight, 2, 2);
+  DataN('k = ;', k, xCenter, 4, 2);
+  for var i := 1 to k do
+  begin
+    n := c1 / 2;
+    c1 := c1 - n; c2 := c2 + n;
+    n := c2 / 2;
+    c2 := c2 - n; c1 := c1 + n;
+  end;
+  ResultR('c1 =  ', c1, xLeft, 2, 2);
+  ResultR('c1 =  ', c2, xRight, 2, 2);
+  SetTestCount(3); 
 end;
 
 procedure InitTask(num: integer);
@@ -376,19 +424,21 @@ begin
     7: Par15Ex5;
     8: Par15Ex6;
     9: Par16Ex13;
-    10:Par16Ex14;
-    11:Par17Ex10;
-    12:Par19Ex13;
-    13:Par19Ex14;
-    14:Par19Ex15;
-    15:Par19Ex16;
+    10: Par16Ex14;
+    11: Par17Ex10;
+    12: Par19Ex13;
+    13: Par19Ex14;
+    14: Par19Ex15;
+    15: Par19Ex16;
+    16: Par19Ex18;
+    17: Par19Ex19;
   end; 
 end;
 
 procedure inittaskgroup;
 begin
   CreateGroup('Eclass', 'Задачник 8-й класс', 
-  'FaCSM & Bezlimix', 'qwqfsdf13dfttd', 15, InitTask);
+  'FaCSM & Bezlimix', 'qwqfsdf13dfttd', 17, InitTask);
   Subgroup('Задачник к учебнику 8 класса 2018г.'); 
 end;
 
