@@ -14,7 +14,7 @@ begin
   DataR('x =', x, xLeft, 3, 2);
   DataR('y = ', y, xCenter, 3, 2);
   DataR('z = ', z, xRight, 3, 2);
-  a := (x + y - z) / (Sqr(x) + 2);
+  a := (x + y - z) / (x*x + 2);
   ResultR('a = ', a, xCenter, 2, 4);
   SetTestCount(3); 
 end;
