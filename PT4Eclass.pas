@@ -412,6 +412,90 @@ begin
   SetTestCount(3); 
 end;
 
+procedure Par19Ex17p1; 
+var 
+n,n1,n2,n3: integer; 
+begin 
+CreateTask('Основные Алгоритмические конструкции'); 
+TaskText('§ 19,страница 108, упражнение 17.1'); 
+n:= 153; 
+n1 := 370; 
+n2 := 371; 
+n3 := 407; 
+ResultN('n = ', n, xleft, 2, 2); 
+ResultN('n1 = ', n1, xCenter, 2, 2); 
+ResultN('n2 = ', n2, xright, 2, 2); 
+ResultN('n3 = ', n3, xcenter, 4, 2); 
+SetTestCount(3); 
+end;
+ 
+procedure Par19Ex17p2; 
+var 
+n,n1,n2: integer; 
+begin 
+CreateTask('Основные Алгоритмические конструкции'); 
+TaskText('§ 19,страница 108, упражнение 17.2'); 
+n:= 1634; 
+n1 := 8208; 
+n2 := 9474; 
+ResultN('n = ', n, xleft, 3, 2); 
+ResultN('n1 = ', n1, xCenter, 3, 2); 
+ResultN('n2 = ', n2, xright, 3, 2); 
+SetTestCount(3); 
+end;
+
+procedure Par19Ex20;
+var m1:array[1..8] of integer;
+m2:array[1..24] of integer;
+begin
+  CreateTask('Основные Алгоритмические конструкции'); 
+TaskText('§ 19,страница 108, упражнение 20'); 
+m1[1]:=1;
+m1[2]:=5;
+m1[3]:=7;
+m1[4]:=11;
+m1[5]:=13;
+m1[6]:=17;
+m1[7]:=19;
+m1[8]:=23; 
+for var i:=1 to 24 do
+  m2[i]:= i-1;
+ResultN('',m1[1],10,1,1);
+ResultN('',m1[2],25,1,1);
+ResultN('',m1[3],50,1,1);
+ResultN('',m1[4],65,1,2);
+ResultN('',m1[5],10,2,2);
+ResultN('',m1[6],25,2,2);
+ResultN('',m1[7],50,2,2);
+ResultN('',m1[8],65,2,2);
+ResultN('',m2[1],10,3,1);
+ResultN('',m2[2],25,3,1);
+ResultN('',m2[3],50,3,1);
+ResultN('',m2[4],65,3,1);
+ResultN('',m2[5],10,4,1);
+ResultN('',m2[6],25,4,1);
+ResultN('',m2[7],50,4,1);
+ResultN('',m2[8],65,4,1);
+ResultN('',m2[9],10,5,2);
+ResultN('',m2[10],25,5,2);
+ResultN('',m2[11],50,5,2);
+ResultN('',m2[12],65,5,2);
+ResultN('',m2[13],10,6,2);
+ResultN('',m2[14],25,6,2);
+ResultN('',m2[15],50,6,2);
+ResultN('',m2[16],65,6,2);
+ResultN('',m2[17],10,7,2);
+ResultN('',m2[18],25,7,2);
+ResultN('',m2[19],50,7,2);
+ResultN('',m2[20],65,7,2);
+ResultN('',m2[21],10,8,2);
+ResultN('',m2[22],25,8,2);
+ResultN('',m2[23],50,8,2);
+ResultN('',m2[24],65,8,2);
+
+SetTestCount(3);
+end;
+
 procedure InitTask(num: integer);
 begin
   case num of 
@@ -430,15 +514,18 @@ begin
     13: Par19Ex14;
     14: Par19Ex15;
     15: Par19Ex16;
-    16: Par19Ex18;
-    17: Par19Ex19;
+    16: Par19Ex17p1;
+    17: Par19Ex17p2;
+    18: Par19Ex18;
+    19: Par19Ex19;
+    20: Par19Ex20;
   end; 
 end;
 
 procedure inittaskgroup;
 begin
   CreateGroup('Eclass', 'Задачник 8-й класс', 
-  'FaCSM & Bezlimix', 'qwqfsdf13dfttd', 17, InitTask);
+  'FaCSM & Bezlimix', 'qwqfsdf13dfttd', 20, InitTask);
   Subgroup('Задачник к учебнику 8 класса 2018г.'); 
 end;
 
