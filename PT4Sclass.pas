@@ -31,7 +31,7 @@ begin
   DataR('x =', x, xLeft, 3, 2);
   DataR('y = ', y, xCenter, 3, 2);
   DataR('z = ', z, xRight, 3, 2);
-  a := (2 * x - z) / (3 + Sqr(y));
+  a := (2 * x - z) / (3 + y*y);
   ResultR('a = ', a * 5, xCenter, 2, 4);
   SetTestCount(3); 
 end;
@@ -48,7 +48,7 @@ begin
   DataR('x =', x, xLeft, 3, 2);
   DataR('y = ', y, xCenter, 3, 2);
   DataR('z = ', z, xRight, 3, 2);
-  a := (1 + z) * (x + (y / Sqr(x) + 4) / (2 + 1 / (Sqr(x) + 4)));
+  a := (1 + z) * (x + (y / (x*x) + 4) / (2 + 1 / (x*x) + 4)));
   ResultR('a = ', a, xCenter, 2, 4);
   SetTestCount(3); 
 end;
@@ -56,15 +56,15 @@ end;
 procedure Par15Ex2p1;
 var
   s, l, pi: real; 
-  r: integer;
+  r: real;
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
   TaskText('§ 15,страница 101, упражнение 2.1', 0, 1);
   TaskText('Число Пи принять равным 3.14', 0, 2);
-  r := RandomN(1, 99);
-  DataN('r = ', r, xCenter, 2, 2);
+  r := RandomR(1, 99);
+  DataR('r = ', r, xCenter, 2, 2);
   pi := 3.14; 
-  s := pi * sqr(r); 
+  s := pi * (r*r); 
   l := 2 * pi * r; 
   ResultR('l = ', l, xLeft, 2, 4);
   ResultR('s = ', s, xRight, 2, 4);  
@@ -73,14 +73,14 @@ end;
 
 procedure Par15Ex2p2;
 var
-  x, z: integer;
+  x, z: real;
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
   TaskText('§ 15,страница 101, упражнение 2.2'); 
-  x := RandomN(1, 60); 
-  DataN('x=', x, xleft, 3, 2); 
+  x := RandomR(1, 60); 
+  DataR('x=', x, xleft, 3, 2); 
   z := 180 - (x * 2); 
-  ResultN('z=', z, xleft, 3, 2); 
+  ResultR('z=', z, xleft, 3, 2); 
   SetTestcount(3); 
   
 end;
