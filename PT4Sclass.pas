@@ -48,7 +48,7 @@ begin
   DataR('x =', x, xLeft, 3, 2);
   DataR('y = ', y, xCenter, 3, 2);
   DataR('z = ', z, xRight, 3, 2);
-  a := (1 + z) * (x + (y / (x*x) + 4) / (2 + 1 / (x*x) + 4)));
+  a := (1 + z) * (x + (y / (x*x) + 4) / (2 + 1 / ((x*x) + 4)));
   ResultR('a = ', a, xCenter, 2, 4);
   SetTestCount(3); 
 end;
@@ -112,12 +112,12 @@ begin
   T2 := RandomN(1, 99);
   S3 := RandomN(1, 99);
   T3 := RandomN(1, 99);
-  DataN('s1 = ', S1, xLeft, 2, 2);
-  DataN('t1 = ', T1, xRight, 2, 2);
+  DataN('s1 = ', S1, xLeft, 1, 2);
+  DataN('t1 = ', T1, xRight, 1, 2);
   DataN('s2 = ', S2, xLeft, 2, 2);
   DataN('t2 = ', T2, xRight, 2, 2); 
-  DataN('s3 = ', S3, xLeft, 2, 2);
-  DataN('t3 = ', T3, xRight, 2, 2);
+  DataN('s3 = ', S3, xLeft, 3, 2);
+  DataN('t3 = ', T3, xRight, 3, 2);
   Vs := (S1 / T1 + S2 / T2 + S3 / T3) / 3;
   ResultR('Vs =  ', Vs, xCenter, 2, 4)
 end;
