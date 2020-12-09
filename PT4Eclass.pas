@@ -55,13 +55,13 @@ var
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
   TaskText('§ 13,страница 64, упражнение 7'); 
-  b := RandomN(-99, 99);
+  a := RandomN(-99, 99);
   c := RandomN(-99, 99);
   DataR('a = ', a, xLeft, 3, 2);
   DataR('c = ', c, xRight, 3, 2);
-  a := sqrt(c*c - a*a);
+  b := sqrt(c*c - a*a);
   s := (a*b)/2;
-  ResultR('a = ', a, xleft, 2, 4);
+  ResultR('b = ', b, xleft, 2, 4);
   ResultR('s = ', s, xright, 2, 4);
   SetTestCount(3); 
 end;
