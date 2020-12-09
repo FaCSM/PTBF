@@ -229,99 +229,6 @@ begin
   SetTestCount(3);
 end;
 
-procedure Par19Ex14;
-var
-  n, i: integer; 
-  s: string; 
-  b: array[1..9] of integer;
-begin
-  CreateTask('Основные Алгоритмические конструкции'); 
-  TaskText('§ 19,страница 108, упражнение 14'); 
-  i := 1; 
-  n := Randomn(0, 999999999); 
-  DataN('n=', n, xCenter, 3, 6); 
-  var a := 0; 
-  s := inttostr(n); 
-  while strtoint(s[i]) mod 3 = 0 do 
-  begin
-    a := a + 1; 
-    b[a] := i; 
-    i := i + 1;
-    SetTestCount(3);  
-  end; 
-  case a of 
-    1: ResultN('', b[1], xCenter, 1, 1); 
-    2:
-      begin
-        ResultN('', b[1], xleft, 1, 1); 
-        ResultN('', b[2], xright, 1, 1); 
-      end; 
-    3:
-      begin
-        ResultN('', b[1], xleft, 1, 1); 
-        ResultN('', b[2], xCenter, 1, 1); 
-        ResultN('', b[3], xright, 1, 1); 
-      end; 
-    4:
-      begin
-        ResultN('', b[1], xleft, 1, 1); 
-        ResultN('', b[2], xCenter, 1, 1); 
-        ResultN('', b[3], xright, 1, 1); 
-        ResultN('', b[4], xcenter, 2, 1); 
-      end; 
-    5:
-      begin
-        ResultN('', b[1], xleft, 1, 1); 
-        ResultN('', b[2], xCenter, 1, 1); 
-        ResultN('', b[3], xright, 1, 1); 
-        ResultN('', b[4], xleft, 2, 1); 
-        ResultN('', b[5], xCenter, 2, 1); 
-      end; 
-    6:
-      begin
-        ResultN('', b[1], xleft, 1, 1); 
-        ResultN('', b[2], xCenter, 1, 1); 
-        ResultN('', b[3], xright, 1, 1); 
-        ResultN('', b[4], xleft, 2, 1); 
-        ResultN('', b[5], xCenter, 2, 1); 
-        ResultN('', b[6], xright, 2, 1); 
-      end; 
-    7:
-      begin
-        ResultN('', b[1], xleft, 1, 1); 
-        ResultN('', b[2], xCenter, 1, 1); 
-        ResultN('', b[3], xright, 1, 1); 
-        ResultN('', b[4], xleft, 2, 1); 
-        ResultN('', b[5], xCenter, 2, 1); 
-        ResultN('', b[6], xright, 2, 1); 
-        ResultN('', b[7], xCenter, 3, 1); 
-      end; 
-    8:
-      begin
-        ResultN('', b[1], xleft, 1, 1); 
-        ResultN('', b[2], xCenter, 1, 1); 
-        ResultN('', b[3], xright, 1, 1); 
-        ResultN('', b[4], xleft, 2, 1); 
-        ResultN('', b[5], xCenter, 2, 1); 
-        ResultN('', b[6], xright, 2, 1); 
-        ResultN('', b[7], xleft, 3, 1); 
-        ResultN('', b[8], xCenter, 3, 1); 
-      end; 
-    9:
-      begin
-        ResultN('', b[1], xleft, 1, 1); 
-        ResultN('', b[2], xCenter, 1, 1); 
-        ResultN('', b[3], xright, 1, 1); 
-        ResultN('', b[4], xleft, 2, 1); 
-        ResultN('', b[5], xCenter, 2, 1); 
-        ResultN('', b[6], xright, 2, 1); 
-        ResultN('', b[7], xleft, 3, 1); 
-        ResultN('', b[8], xCenter, 3, 1); 
-        ResultN('', b[9], xright, 3, 1); 
-      end; 
-  end;
-end;
-
 procedure Par19Ex15;
 var
   x, a, k, t,  d: integer;
@@ -513,21 +420,20 @@ begin
     10: Par16Ex14;
     11: Par17Ex10;
     12: Par19Ex13;
-    13: Par19Ex14;
-    14: Par19Ex15;
-    15: Par19Ex16;
-    16: Par19Ex17p1;
-    17: Par19Ex17p2;
-    18: Par19Ex18;
-    19: Par19Ex19;
-    20: Par19Ex20;
+    13 Par19Ex15;
+    14 Par19Ex16;
+    15 Par19Ex17p1;
+    16 Par19Ex17p2;
+    17 Par19Ex18;
+    18 Par19Ex19;
+    19Par19Ex20;
   end; 
 end;
 
 procedure inittaskgroup;
 begin
   CreateGroup('Eclass', 'Задачник 8-й класс', 
-  'FaCSM & Bezlimix', 'qwqfsdf13dfttd', 20, InitTask);
+  'FaCSM & Bezlimix', 'qwqfsdf13dfttd', 19, InitTask);
   Subgroup('Задачник к учебнику 8 класса 2018г.'); 
 end;
 
