@@ -202,7 +202,7 @@ var
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
   TaskText('§ 16,страница 107, упражнение 3.4'); 
-  a := RandomN(999, 99999); 
+  a := RandomN(9999, 99999); 
   DataN('a = ', a, xcenter, 3, 5); 
   ResultN('b = ', a div 10000, xcenter, 3, 2); 
   SetTEstCount(3); 
