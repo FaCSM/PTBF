@@ -51,7 +51,7 @@ end;
 
 procedure Par13Ex7;
 var
-  x, y, a: real;
+  x, y, a,s: real;
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
   TaskText('§ 13,страница 64, упражнение 7'); 
@@ -59,8 +59,10 @@ begin
   y := RandomN(-99, 99);
   DataR('x = ', x, xLeft, 3, 2);
   DataR('y = ', y, xRight, 3, 2);
-  a := sqrt(sqr(x) - sqr(y));
-  ResultR('a = ', a, xCenter, 2, 4);
+  a := sqrt(x*x - y*y);
+  s := (a*b)/2;
+  ResultR('a = ', a, xleft, 2, 4);
+  ResultR('s = ', s, xright, 2, 4);
   SetTestCount(3); 
 end;
 
