@@ -51,7 +51,7 @@ end;
 
 procedure Par13Ex7;
 var
-  x, y, a,s: real;
+  a, b, c,s: real;
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
   TaskText('§ 13,страница 64, упражнение 7'); 
