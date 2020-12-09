@@ -14,7 +14,7 @@ begin
   DataR('x =', x, xLeft, 3, 2);
   DataR('y = ', y, xCenter, 3, 2);
   DataR('z = ', z, xRight, 3, 2);
-  a := (x + y - z) / (x*x + 2);
+  a := (x + y - z) / (x * x + 2);
   ResultR('a = ', a, xCenter, 2, 4);
   SetTestCount(3); 
 end;
@@ -31,7 +31,7 @@ begin
   DataR('x =', x, xLeft, 3, 2);
   DataR('y = ', y, xCenter, 3, 2);
   DataR('z = ', z, xRight, 3, 2);
-  a := (2 * x - z) / (3 + y*y);
+  a := (2 * x - z) / (3 + y * y);
   ResultR('a = ', a * 5, xCenter, 2, 4);
   SetTestCount(3); 
 end;
@@ -48,7 +48,7 @@ begin
   DataR('x =', x, xLeft, 3, 2);
   DataR('y = ', y, xCenter, 3, 2);
   DataR('z = ', z, xRight, 3, 2);
-  a := (1 + z) * (x + (y / (x*x) + 4) / (2 + 1 / ((x*x) + 4)));
+  a := (1 + z) * (x + (y / (x * x) + 4) / (2 + 1 / ((x * x) + 4)));
   ResultR('a = ', a, xCenter, 2, 4);
   SetTestCount(3); 
 end;
@@ -64,7 +64,7 @@ begin
   r := RandomR(1, 99);
   DataR('r = ', r, xCenter, 2, 2);
   pi := 3.14; 
-  s := pi * (r*r); 
+  s := pi * (r * r); 
   l := 2 * pi * r; 
   ResultR('l = ', l, xLeft, 2, 4);
   ResultR('s = ', s, xRight, 2, 4);  
@@ -154,14 +154,14 @@ var
   b: string;
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
-  TaskText('§ 16,страница 107, упражнение 3.3'); 
+  TaskText('§ 16,страница 107, упражнение 3.3',0,2); 
+  TaskText('Выводить только числа',0,4); 
   a := RandomN(900, 9999);
   DataN('a = ', a, xCenter, 2, 4);
   c := a div 1000;
   d := a mod 1000;
-  
-  b := c + 'кг' + d + 'гр'; 
-  ResultS('', b, xCenter, 3);
+  ResultN('кг - ', c, xLeft, 3, 2); 
+  ResultN('г - ', d, xRight, 3, 3); 
 end;
 
 procedure Par16ex3p1;
@@ -198,13 +198,13 @@ end;
 procedure Par16ex3p4;
 
 var
-  a: real;
+  a: integer;
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
   TaskText('§ 16,страница 107, упражнение 3.4'); 
   a := RandomN(999, 99999); 
-  DataR('a = ', a, xcenter, 3, 5); 
-  ResultR('b = ', a/10000, xcenter, 3, 2); 
+  DataN('a = ', a, xcenter, 3, 5); 
+  ResultN('b = ', a div 10000, xcenter, 3, 2); 
   SetTEstCount(3); 
 end;
 
