@@ -57,8 +57,8 @@ begin
   TaskText('§ 13,страница 64, упражнение 7'); 
   a := RandomN(-99, 99);
   c := RandomN(-99, 99);
-  DataR('a = ', a, xLeft, 3, 2);
-  DataR('c = ', c, xRight, 3, 2);
+  DataR('c = ', a, xLeft, 3, 2);
+  DataR('a = ', c, xRight, 3, 2);
   b := sqrt(c*c - a*a);
   s := (a*b)/2;
   ResultR('b = ', b, xleft, 2, 4);
