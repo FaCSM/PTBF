@@ -95,7 +95,7 @@ begin
   s := RandomN(1, 99);
   DataR('v = ', v, xLeft, 2, 2);
   DataR('s = ', s, xRight, 2, 2);
-  ResultR('t = ', s / v, xCenter, 2, 2);
+  ResultR('t = ', s / v *60, xCenter, 2, 2);
   SetTestCount(3);   
 end;
 
