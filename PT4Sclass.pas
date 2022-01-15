@@ -90,7 +90,7 @@ var
   v, s: real;
 begin
   CreateTask('Основные Алгоритмические конструкции'); 
-  TaskText('§ 15,страница 101, упражнение 2.2'); 
+  TaskText('§ 15,страница 101, упражнение 3.1'); 
   v := RandomN(1, 99);
   s := RandomN(1, 99);
   DataR('v = ', v, xLeft, 2, 2);
